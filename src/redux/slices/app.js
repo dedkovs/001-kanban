@@ -28,7 +28,7 @@ export const app = createSlice({
   reducers: {
     changeColumn: (state, action) => {
       let newColumn = action.payload;
-      console.log("new column: ", newColumn);
+      // console.log("new column: ", newColumn);
       // let columns = { ...state.columns, [newColumn.id]: { ...newColumn } };
       state.columns["column-1"] = newColumn;
       // return state;
@@ -41,8 +41,11 @@ export const app = createSlice({
       state = action.payload;
       // return action.payload;
     },
+    setColumns: (state, action) => {
+      state.columns = action.payload;
+    },
   },
 });
 
-export const { changeColumn, changeState } = app.actions;
+export const { changeColumn, changeState, setColumns } = app.actions;
 export default app.reducer;

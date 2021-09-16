@@ -1,22 +1,23 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useAppSelector, useAppDispatch } from "./redux/hooks";
 import Column from "./Column";
 import { DragDropContext } from "react-beautiful-dnd";
 import {
   // changeColumn,
   changeState,
+  // setColumns,
 } from "./redux/slices/app";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const App = () => {
-  const [test, setTest] = useState(false);
-  const { data } = useAppSelector((state) => state.app);
+  // const [test, setTest] = useState(false);
+  const data = useAppSelector((state) => state.app);
 
-  const state1 = useSelector((state) => state.app);
+  // const state1 = useSelector((state) => state.app);
 
-  console.log("state1: ", state1);
+  // console.log("state1: ", state1);
 
-  const columns = useAppSelector((state) => state.app.columns);
+  // const columns = useAppSelector((state) => state.app.columns);
   const dispatch = useAppDispatch();
   // console.log(data);
   const onDragEnd = (result) => {
@@ -53,11 +54,20 @@ const App = () => {
       },
     };
 
-    console.log("newState: ", newState);
-    console.log("columns: ", columns);
+    // const newColumns = {
+    //   "column-1": {
+    //     id: "column-1",
+    //     title: "To do",
+    //     taskIds: ["task-2", "task-1", "task-3", "task-4"],
+    //   },
+    // };
+
+    // console.log("newState: ", newState);
+    // console.log("columns: ", columns);
 
     dispatch(changeState(newState));
-    setTest(true);
+    // dispatch(setColumns(newColumns));
+    // setTest(true);
 
     // console.log(data);
     // setTimeout(() => {
