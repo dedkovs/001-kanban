@@ -50,7 +50,7 @@ const Task1 = ({ provided, innerRef, task }) => {
   return (
     <Card
       className={classes.taskCard}
-      key={task.id}
+      // key={task.id}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
       ref={innerRef}
@@ -73,7 +73,7 @@ const Column = ({ column, tasks }) => {
           {(provided) => (
             <Column1 provided={provided} innerRef={provided.innerRef}>
               {tasks.map((task, index) => (
-                <Draggable draggableId={task.id} index={index} key={index}>
+                <Draggable draggableId={task.id} index={index} key={task.id}>
                   {(provided) => (
                     <Task1
                       provided={provided}

@@ -83,7 +83,7 @@ const App = () => {
       <div style={{ padding: 20, display: "inline-flex" }}>
         {data.columnOrder.map((columnId) => {
           const column = data.columns[columnId];
-          // console.log("column: ", column);
+          console.log("column: ", column);
           const tasks = column.taskIds.map((taskId) => data.tasks[taskId]);
           // console.log("tasks: ", tasks);
           return <Column key={column.id} column={column} tasks={tasks} />;
