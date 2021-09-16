@@ -4,8 +4,8 @@ import Column from "./Column";
 import { DragDropContext } from "react-beautiful-dnd";
 import {
   // changeColumn,
-  changeState,
-  // setColumns,
+  // changeState,
+  setColumns,
 } from "./redux/slices/app";
 // import { useSelector } from "react-redux";
 
@@ -24,16 +24,16 @@ const App = () => {
     // console.log(result);
     const { destination, source, draggableId } = result;
 
-    // if (!destination) {
-    //   return;
-    // }
+    if (!destination) {
+      return;
+    }
 
-    // if (
-    //   destination.droppableId === source.droppableId &&
-    //   destination.index === source.index
-    // ) {
-    //   return;
-    // }
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
 
     const column = data.columns[source.droppableId];
     // console.log("column: ", column);
@@ -65,8 +65,8 @@ const App = () => {
     // console.log("newState: ", newState);
     // console.log("columns: ", columns);
 
-    dispatch(changeState(newState));
-    // dispatch(setColumns(newColumns));
+    // dispatch(changeState(newState));
+    dispatch(setColumns(newState.columns));
     // setTest(true);
 
     // console.log(data);

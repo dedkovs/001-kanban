@@ -38,7 +38,7 @@ export const app = createSlice({
     },
     changeState: (state, action) => {
       console.log("from reducer: ", action.payload);
-      state = action.payload;
+      state = JSON.parse(JSON.stringify(action.payload));
       // return action.payload;
     },
     setColumns: (state, action) => {
